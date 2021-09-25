@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    
+    <title>Lyric Search</title>
+  </head>
+  <body>
+    <main class="main">
+      <!-- Header widget -->
+      <header class="header">
+        <form v-on:submit.prevent="searchSong" class="form">
+          <input
+            type="search"
+            class="search"
+            placeholder="Search artist or song"
+            v-model.trim="inputValue"
+            required
+          />
+          <input type="submit" class="submit" value="Search" />
+        </form>
+      </header>
+      <!-- Content -->
+      <article class="content" id="contentId">
+          <ul class="content">
+              <li v-for="song in songs" >
+                    <span>{song.title}}-{{song.artist.name}}</span>
+                    <img :src="song.album.cover" alt="">
+              </li>
+          </ul>
+      </article>
+      <hr>
+      <pre>{{$data}}</pre>
+    </main>
+  </body>
+  <script src="https://unpkg.com/vue@next"></script>
+  <script src="script.js"></script>
+  
+</html>
