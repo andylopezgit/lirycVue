@@ -11,22 +11,28 @@ html body {
 
 body {
     font-family: sans-serif;
-    background-color: goldenrod; 
+    background-color: #B1740F;
+    text-align: center;
 }
 
 /* Main */
 
 .main {
+    display: flex;
     max-width: 1280px;
+    justify-content: center;
+    flex-direction: column;
     margin: 0 auto; /*lo centro*/
-    background-color: white;
-    box-shadow: 1px 1px 2px black;
+    background-color: #B1740F;
+    /* box-shadow: 1px 1px 2px black; */
     min-height: 50vh;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .header {
-    background-color: black;
+    display: flex;
+    width: 100%;
+    background-color: #FDB833;
     background-image: url('');
     background-size: cover; /*lo posiciono*/
     background-position: center;
@@ -67,8 +73,20 @@ body {
 }
 
 .content {
-    background-color:rgb(238, 233, 221);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+
+.contentUl {
+    display: flex;
+    background-color:#FFD07B;
     padding: 1rem 3rem;
+    flex-direction: column;
+    justify-content: space-around;
+    min-height: 40vh;
+
 }
 
 #show {
@@ -77,4 +95,44 @@ body {
     font-size: 1rem;
     padding: 1rem;
     cursor: pointer;
+}
+
+.liSongs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2px;
+    background-color: #B1740F;
+     padding: 10px;
+}
+
+span{
+    display: flex;
+    padding: 1rem;
+    width: 400px;
+
+}
+
+@media (max-width: 920px) {
+    
+    .liSongs {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 4px;
+        background-color: #B1740F;
+        padding: 2px;
+        
+    }
+    
+    span{
+        display: flex;
+        padding: 1rem;
+        justify-content: center;
+        align-items: center;
+    
+    }
+        
 }

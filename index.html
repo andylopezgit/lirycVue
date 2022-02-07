@@ -10,13 +10,15 @@
   </head>
   <body>
     <main class="main">
+      <h1>Lyric Search</h1>
       <!-- Header widget -->
       <header class="header">
+        
         <form v-on:submit.prevent="searchSong" class="form">
           <input
             type="search"
             class="search"
-            placeholder="Search artist or song"
+            placeholder="Search artist or song. Example Queen"
             v-model.trim="inputValue"
             required
           />
@@ -25,15 +27,15 @@
       </header>
       <!-- Content -->
       <article class="content" id="contentId">
-          <ul class="content">
-              <li v-for="song in songs" >
-                    <span>{song.title}}-{{song.artist.name}}</span>
+          <ul class="contentUl">
+              <li v-for="song in songs" class="liSongs">
+                    <span>{{song.title}}</span>
+                    <span>{{song.artist.name}}</span>
                     <img :src="song.album.cover" alt="">
               </li>
           </ul>
       </article>
-      <hr>
-      <pre>{{$data}}</pre>
+      <!-- <pre>{{$data}}</pre> -->
     </main>
   </body>
   <script src="https://unpkg.com/vue@next"></script>
